@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import {GalleryComponent} from "./gallery/gallery.component";
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'template-var-app';
+
+  addNewPicture(gallery:GalleryComponent) {
+    gallery.pictures.unshift(gallery.generateImage())
+  }
+  removeFirstPicture(gallery:GalleryComponent) {
+    gallery.pictures.shift();
+  }
 }
